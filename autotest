@@ -1,0 +1,49 @@
+#!/bin/dash
+
+test_folder='test'
+
+make
+
+./main 64 6 3 CLS ./data ./$test_folder/test1/data_1.txt ./$test_folder/test1/query_1.txt ./$test_folder/test1/log_1.txt
+rm ./data/*
+
+# selection only test
+./main 50 3 3 CLS ./data ./$test_folder/test2/data_2.txt ./$test_folder/test2/query_2.txt ./$test_folder/test2/log_2.txt
+rm ./data/*
+
+# join only test （for enough buffers）
+./main 50 14 2 CLS ./data ./$test_folder/test3/data_3.txt ./$test_folder/test3/query_3.txt ./$test_folder/test3/log_3.txt
+rm ./data/*
+
+# join only test  
+./main 50 5 2 CLS ./data ./$test_folder/test4/data_4.txt ./$test_folder/test4/query_4.txt ./$test_folder/test4/log_4.txt
+rm ./data/*
+
+# mixed test 
+./main 40 3 3 CLS ./data ./$test_folder/test5/data_5.txt ./$test_folder/test5/query_5.txt ./$test_folder/test5/log_5.txt
+rm ./data/*
+
+./main 57 4 2 CLS ./data ./$test_folder/test6/data_6.txt ./$test_folder/test6/query_6.txt ./$test_folder/test6/log_6.txt
+rm ./data/*
+
+./main 200 6 3 CLS ./data ./$test_folder/test7/data_7.txt ./$test_folder/test7/query_7.txt ./$test_folder/test7/log_7.txt
+rm ./data/*
+
+./main 80 7 5 CLS ./data ./$test_folder/test8/data_8.txt ./$test_folder/test8/query_8.txt ./$test_folder/test8/log_8.txt
+rm ./data/*
+
+./main 40 3 4 CLS ./data ./$test_folder/test9/data_9.txt ./$test_folder/test9/query_9.txt ./$test_folder/test9/log_9.txt
+rm ./data/*
+
+./main 40 3 2 CLS ./data ./$test_folder/test10/data_10.txt ./$test_folder/test10/query_10.txt ./$test_folder/test10/log_10.txt
+rm ./data/*
+
+for number in $(seq 1 10); do
+    if diff ./$test_folder/test$number/log_$number.txt ./$test_folder/test$number/expected_log_$number.txt 1>/dev/null; then
+        echo "test$number PASS"
+    else
+        echo "test$number FAIL"
+    fi
+done
+
+make clean

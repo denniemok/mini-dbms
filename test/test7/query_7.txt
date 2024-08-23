@@ -1,0 +1,5 @@
+sel 12 37 = t0_name
+join 20 t0_name 15 t1_name
+join 11 t3_name 12 t4_name
+sel 3 18 = t4_name
+join 14 t1_name 3 t2_name

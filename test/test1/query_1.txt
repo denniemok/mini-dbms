@@ -1,0 +1,4 @@
+sel 0 1314 = t1_name
+sel 2 23 = t1_name
+join 3 t1_name 1 t2_name
+join 1 t1_name 1 t2_name

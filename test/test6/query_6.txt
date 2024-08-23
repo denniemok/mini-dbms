@@ -1,0 +1,5 @@
+sel 3 5 = t2_name
+join 1 t5_name 2 t0_name
+join 0 t1_name 0 t0_name
+sel 0 6 = t2_name
+join 0 t2_name 0 t3_name

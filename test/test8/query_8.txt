@@ -1,0 +1,12 @@
+sel 6 40 = t8_name
+join 0 t4_name 6 t8_name
+sel 1 31 = t4_name 
+join 1 t8_name 3 t4_name
+sel 5 9 = t0_name
+join 3 t1_name 6 t7_name
+sel 4 7 = t3_name
+join 5 t2_name 8 t9_name
+sel 5 41 = t6_name
+join 2 t10_name 3 t5_name
+join 6 t11_name 2 t14_name
+join 5 t12_name 4 t13_name
