@@ -156,8 +156,8 @@ Each table file is named after its objectID, similar to PostgreSQL. For each pag
 ```
  INT64 | Tuple 1 | Tuple 2 | 0 ... || INT64 | Tuple 1 | Tuple 2 | 0 ...
        | INT32, INT32, ... |
-|<-------------Page 1------------->||<-------------Page 2------------->
-|<----------------------------Table File------------------------------>
+|<-------------Page 1------------->||<-------------Page 2------------->|
+|<----------------------------Table File------------------------------>|
 ```
 
 ## Query Processing Lifecycle
